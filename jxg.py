@@ -1,6 +1,14 @@
 
 DIGITS = '0123456789'
 
+class Error:
+	def __init__(self, error_name, details):
+		self.error_name = error_name
+		self.details = details
+
+	def as_string(self):
+		result = f'{self.error_name}: {self.details}'
+
 TT_INT    = 'TT_INT'
 TT_FLOAT  = 'FLOAT'
 TT_PLUS   = 'PLUS'
@@ -54,7 +62,7 @@ class Lexer:
 				self.advance()
 			else:
 				pass
-				# return an error https://youtu.be/Eythq9848Fg?list=PLZQftyCk7_SdoVexSmwy_tBgs7P0b97yD&t=450
+				
 
 		return tokens
 	
